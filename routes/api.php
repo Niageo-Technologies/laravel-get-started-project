@@ -47,3 +47,43 @@ Route::group([ 'namespace'=> '\App\Http\Controllers\Api', 'prefix' => '',  'as'=
   Route::get('/products/search/{title}', 'ProductController@search')->name('products.search'); 
   Route::apiResource('products', 'ProductController'); 
 });
+
+Route::group([ 'namespace'=> '\App\Http\Controllers\Api\Admin', 'prefix' => 'admin',  'as'=>'admin.', 'middleware' => ['auth:api']], function () { 
+  Route::get('/sets/search/{title}', 'SetController@search')->name('sets.search'); 
+  Route::apiResource('sets', 'SetController'); 
+});
+
+Route::group([ 'namespace'=> '\App\Http\Controllers\Api\Admin', 'prefix' => 'admin',  'as'=>'admin.', 'middleware' => ['auth:api']], function () { 
+  Route::get('/players/search/{title}', 'PlayerController@search')->name('players.search'); 
+  Route::apiResource('players', 'PlayerController'); 
+});
+
+Route::group([ 'namespace'=> '\App\Http\Controllers\Api\Admin', 'prefix' => 'admin',  'as'=>'admin.', 'middleware' => ['auth:api']], function () { 
+  Route::get('/player-has-attributes/search/{title}', 'PlayerHasAttributeController@search')->name('player-has-attributes.search'); 
+  Route::apiResource('player-has-attributes', 'PlayerHasAttributeController'); 
+});
+
+Route::group([ 'namespace'=> '\App\Http\Controllers\Api\Admin', 'prefix' => 'admin',  'as'=>'admin.', 'middleware' => ['auth:api']], function () { 
+  Route::get('/attributes/search/{title}', 'AttributeController@search')->name('attributes.search'); 
+  Route::apiResource('attributes', 'AttributeController'); 
+});
+
+Route::group([ 'namespace'=> '\App\Http\Controllers\Api\Admin', 'prefix' => 'admin',  'as'=>'admin.', 'middleware' => ['auth:api']], function () { 
+  Route::get('/services/search/{title}', 'ServiceController@search')->name('services.search'); 
+  Route::apiResource('services', 'ServiceController'); 
+});
+
+Route::group([ 'namespace'=> '\App\Http\Controllers\Api\Admin', 'prefix' => 'admin',  'as'=>'admin.', 'middleware' => ['auth:api']], function () { 
+  Route::get('/games/search/{title}', 'GameController@search')->name('games.search'); 
+  Route::apiResource('games', 'GameController'); 
+});
+
+Route::group([ 'namespace'=> '\App\Http\Controllers\Api\Admin', 'prefix' => 'admin',  'as'=>'admin.', 'middleware' => ['auth:api']], function () { 
+  Route::get('/points/search/{title}', 'PointController@search')->name('points.search'); 
+  Route::apiResource('points', 'PointController'); 
+});
+
+Route::group([ 'namespace'=> '\App\Http\Controllers\Api\Admin', 'prefix' => 'admin',  'as'=>'admin.', 'middleware' => ['auth:api']], function () { 
+  Route::get('/balls/search/{title}', 'BallController@search')->name('balls.search'); 
+  Route::apiResource('balls', 'BallController'); 
+});

@@ -20,10 +20,10 @@
                         <thead>
                             <tr>
                                 <th>
-                                    Title
+                                    Set
                                 </th>
                                 <th>
-                                    Created
+                                    date
                                 </th>
                                 <th width="5%">Actions</th>
                             </tr>
@@ -32,7 +32,9 @@
                             @forelse($games as $game)
                             <tr>
                                 <td>
-                                    {{ $game->title ?? 'N/A' }}
+                                    <a href="{{ route("admin.games.show", [$game->id]) }}">
+                                        {!! '<b>' . $game->set->player->name .'</b>' . '<br>'.$game->set->date?? 'N/A' !!}
+                                    </a>
                                 </td>
 
                                 <td>

@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Api\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Models\Set;
+use App\Models\Player;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 use App\Http\Resources\SetResource;
@@ -35,9 +36,9 @@ class SetController extends Controller
     public function store(Request $request)
     {
         $data = $request->all();
-
+        
         $validator = Validator::make($data, [
-            'title' => 'required',
+            'opponent_id' => 'required',
         ]);
 
         if ($validator->fails()) {

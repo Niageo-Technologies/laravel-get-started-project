@@ -16,6 +16,8 @@ class CreatePointsTable extends Migration
         Schema::create('points', function (Blueprint $table) {
             $table->increments('id');
             $table->unsignedBigInteger('game_id');
+            $table->timestamps();
+
         });
     }
 

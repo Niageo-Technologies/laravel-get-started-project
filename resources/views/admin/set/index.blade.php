@@ -20,7 +20,7 @@
                         <thead>
                             <tr>
                                 <th>
-                                    Title
+                                    VS
                                 </th>
                                 <th>
                                     Created
@@ -32,7 +32,7 @@
                             @forelse($sets as $set)
                             <tr>
                                 <td>
-                                    {{ $set->title ?? 'N/A' }}
+                                    {{ $set->player->name ?? 'N/A' }}
                                 </td>
 
                                 <td>

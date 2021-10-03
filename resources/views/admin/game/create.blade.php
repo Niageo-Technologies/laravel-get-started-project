@@ -1,38 +1,47 @@
-@extends('admin.layouts.app')
+@extends('admin.layouts.crud_form')
+@section('action')
+    {{ route('admin.games.store') }}
+@endsection
 
-@section('content')
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">{{ __('Create Game') }}</div>
+@section('title', "Create Game")
 
-                <div class="card-body">
+@section('fields')
 
-                    @if (session('message'))
-                    <div class="alert alert-success" role="alert">
-                        {{ session('message') }}
-                    </div>
-                    @endif
 
-                    <form method="POST" action='{{ route("admin.games.store") }}' enctype="multipart/form-data">
-                        @csrf
+@component('components.forms.input', [
+    'name' => 'set_id', 
+    'type' => 'select',
+    'label' => 'Set',
+    'placeholder' => 'Select Set', 
+    'col_classes' => ['col-sm-12', 'col-md-12'], 
+    'options' => $options
+    ])
+@endcomponent
 
-                        <div class="form-group">
-                            <input class="form-control" type="text" name="title" placeholder="Title">
-                            @error('title')
-                            <label class="text-danger">{{ $message }}</label>
-                            @enderror
-                        </div>
+@component('components.forms.input', [
+    'name' => 'time_out', 
+    'type' => 'boolean',
+    'label' => 'Time out used',
+    'placeholder' => '',
+    'default_value'=> 1, 
+    'col_classes' => ['col-sm-12', 'col-md-12'], 
 
-                        <div class="form-group">
-                            <a class="btn btn-danger mr-1" href='{{ route("admin.games.index") }}' type="submit">Cancel</a>
-                            <button class="btn btn-success" type="submit">Save</button>
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
+    ])
+@endcomponent
+
+@component('components.forms.input', [
+    'name' => 'playing_style', 
+    'type' => 'textarea-rich',
+    'label' => 'Forehand Rubber',
+    'placeholder' => 'Opponent\'s Forehand Rubber', 
+    'col_classes' => ['col-sm-12', 'col-md-12'], 
+    'options' => [
+            ['value' =>'attacker', 'label' =>'Attacker' ],
+            ['value' =>'defender', 'label' =>'Defender' ],
+            ['value' =>'chopper', 'label' =>'Chopper' ],
+        ]
+    ])
+@endcomponent
+
+
 @endsection

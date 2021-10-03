@@ -17,11 +17,13 @@ class CreateSetsTable extends Migration
             $table->increments('id');
             $table->unsignedBigInteger('opponent_id');
             $table->date('date')->nullable();
-            $table->text('Table type')->nullable();
+            $table->text('table_type')->nullable();
             $table->text('Tournament')->nullable();
             $table->text('Venue')->nullable();
             $table->text('fh_rubber');
             $table->text('bh_rubber');
+            $table->timestamps();
+
         });
     }
 

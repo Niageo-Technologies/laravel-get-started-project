@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\PointRequest;
 use App\Models\Point;
+use App\Models\Game;
 use Exception;
 
 class PointController extends Controller
@@ -43,7 +44,7 @@ class PointController extends Controller
                 'alert-type' => 'error'
             );
 
-            return redirect()->route('admin.points.index')->with($notification);
+            return redirect()->route('admin.games.show', ['game' => Point::find($request->point_id)->game->id])->with($notification);
         }
     }
 
@@ -95,6 +96,21 @@ class PointController extends Controller
                 'alert-type' => 'error'
             );
             return redirect()->route('admin.points.index')->with($notification);
+        }
+    }
+
+    public function get_points(Game $game){   //to develop html options array given the Model
+        $points = $game->points;
+        return $points;
+    }
+
+    public function point_finished(Point $point){ //to develop html options array given the Model
+        
+        foreach($point->balls as $ball){
+            if($ball->winner == true){
+                return true;
+            }
+            return false;
         }
     }
 }

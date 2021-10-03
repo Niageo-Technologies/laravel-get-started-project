@@ -14,7 +14,9 @@ class SetRequest extends FormRequest
     public function rules()
     {
         return [
-            'title' => 'required',
+            'opponent_id' => 'required',
+            'bh_rubber' => 'required',
+            'fh_rubber' => 'required',
         ];
     }
 }

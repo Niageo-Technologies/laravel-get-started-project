@@ -5,7 +5,9 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\GameRequest;
 use App\Models\Game;
+use App\Models\Player;
 use Exception;
+
 
 class GameController extends Controller
 {
@@ -22,7 +24,9 @@ class GameController extends Controller
 
     public function create()
     {
-        return view('admin.game.create');
+        $options = $this->fetch_options_from_database(Player::class, 'name', 'created_at');
+
+        return view('admin.game.create', ['options' => $options]);
     }
 
     public function store(GameRequest $request)
@@ -49,7 +53,13 @@ class GameController extends Controller
 
     public function show(Game $game)
     {
-        //
+        //dd($game->points);
+        
+        return view('admin.game.show', [
+        'game' => $game, 
+        'index' => 1,
+        'strokes' => config('app.table_tennis_stroke')
+        ]);
     }
 
     public function edit(Game $game)

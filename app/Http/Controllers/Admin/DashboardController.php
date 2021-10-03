@@ -4,6 +4,8 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Models\User;
+use App\Models\Ball;
+use App\Models\Point;
 use Illuminate\Http\Request;
 
 class DashboardController extends Controller
@@ -15,7 +17,10 @@ class DashboardController extends Controller
     
     public function index()
     {
-        $data['products'] = User::latest()->get();
+        $balls = Ball::all();
+        $points = Point::all();
+        //dd('stop');
+        $data = ['balls' => $balls, 'points' => $points];
         return view('admin.dashboard.index', $data);
     }
 }

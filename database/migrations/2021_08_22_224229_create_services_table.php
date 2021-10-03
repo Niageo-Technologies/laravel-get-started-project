@@ -16,12 +16,14 @@ class CreateServicesTable extends Migration
         Schema::create('services', function (Blueprint $table) {
             $table->increments('id');
             $table->unsignedBigInteger('point_id')->nullable();
-            $table->text('Service_type');
+            $table->text('service_type');
             $table->text('placement');
             $table->text('length');
             $table->text('toss');
             $table->text('spin');
             $table->boolean('Winner');
+            $table->timestamps();
+
         });
     }
 

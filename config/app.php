@@ -134,6 +134,122 @@ return [
     |
     */
 
+    'table_tennis_stroke' => [
+        ['value' =>'loop' ,'label'=>'Loop'],
+        ['value' =>'counter_Loop' ,'label'=>'Counter Loop'],
+        ['value' =>'drive' ,'label'=>'Drive'],
+        ['value' =>'hit' ,'label'=>'Hit'],
+        ['value' =>'push' ,'label'=>'Push'],
+        ['value' =>'block' ,'label'=>'Block'],
+        ['value' =>'smash' ,'label'=>'Smash'],
+        ['value' =>'chop' ,'label'=>'Chop'],
+        ['value' =>'flick' ,'label'=>'Flick'],
+        ['value' =>'banana Flick' ,'label'=>'Banana Flick',],
+        ['value' =>'strawberry Flick','label'=>'Strawberry Flick'],
+        ['value' =>'lob' ,'label' => 'Lob'],
+        ['value' =>'pendulum' ,'label' => 'Serve - pendulum'],
+        ['value' =>'reverse_pendulum' ,'label' => 'Serve -Reverse Pendulum'],
+        ['value' =>'corkscrew' ,'label' => 'Serve - Corkscrew'],
+        ['value' =>'birdman' ,'label' => 'Serve - Birdman'],
+        ['value' =>'Shovel' ,'label' => 'Serve - Shovel'],
+
+    ],
+
+    'table_tennis_stroke_values' => [
+        'loop' => 'Loop',
+        'counter_Loop' =>'Counter Loop',
+        'drive' =>'Drive',
+        'push' =>'Push',
+        'block' =>'Block',
+        'smash' =>'Smash',
+        'hit' =>'Hit',
+        'chop' =>'Chop',
+        'flick' =>'Flick',
+        'banana Flick' =>'Banana Flick',
+        'strawberry Flick','label'=>'Strawberry Flick',
+        'lob'  => 'Lob',
+        'pendulum'  => 'Serve - pendulum',
+        'reverse_pendulum'  => 'Serve -Reverse Pendulum',
+        'corkscrew'  => 'Serve - Corkscrew',
+        'birdman'  => 'Serve - Birdman',
+        'Shovel'  => 'Serve - Shovel',
+    ],
+
+    'table_tennis_spin_intensity' => [
+        ['value' =>'low' ,'label'=>'Low'],
+        ['value' =>'medium' ,'label'=>'Medium'],
+        ['value' =>'high' ,'label'=>'High'],
+        ['value' =>'dead' ,'label'=>'Dead'],
+    ],
+
+    'table_tennis_spin_intensity_values' => [
+        'low' => 'Low',
+        'medium' => 'Medium',
+        'high' => 'High',
+        'dead' => 'Dead',
+    ],
+    
+    'table_tennis_placements' => [
+        ['value' =>'1' ,'label'=>'Extreme Backhand'],
+        ['value' =>'2' ,'label'=>'Backhand'],
+        ['value' =>'3' ,'label'=>'Backhand middle'],
+        ['value' =>'4' ,'label'=>'Middle'],
+        ['value' =>'5' ,'label'=>'forehand Middle'],
+        ['value' =>'6' ,'label'=>'Forehand'],
+        ['value' =>'7' ,'label'=>'Extreme wide forehand'],
+    ],
+
+    'table_tennis_placements_values' => [
+        '1' =>'Extreme Backhand',
+        '2' =>'Backhand',
+        '3' =>'Backhand middle',
+        '4' =>'Middle',
+        '5' =>'forehand Middle',
+        '6' =>'Forehand',
+        '7' =>'Extreme wide forehand',
+    ],
+
+    'table_tennis_tosses' => [
+        ['value' => null ,'label'=>'N/A'],
+        ['value' =>'1' ,'label'=>'High'],
+        ['value' =>'2' ,'label'=>'medium'],
+        ['value' =>'3' ,'label'=>'Low'],
+    ],
+
+    'table_tennis_toss_values' => [
+         null =>'N/A',
+        '1' =>'High',
+        '2' =>'medium',
+        '3' =>'Low',
+    ],
+
+    'table_tennis_spin_type_values' => [
+        
+        'top' => 'Topspin',
+        'top_side' => 'Top-sidespin',
+        'side' => 'Sidespin',
+        'back' => 'Backspin',
+        'back_side' => 'Back-sidespin',
+        'dead' => 'Dead Ball',
+        
+
+
+    ],
+
+    'table_tennis_spin_type' => [
+        ['value' =>'top', 'label' =>'Topspin' ],
+        ['value' =>'top_side', 'label' =>'Top-sidespin' ],
+        ['value' =>'side', 'label' =>'Sidespin' ],
+        ['value' =>'back', 'label' =>'Backspin' ],
+        ['value' =>'back_side', 'label' =>'Back-sidespin' ],
+        ['value' =>'dead', 'label' =>'DeadBall' ],
+    ],   
+    
+    'hand_values' => [
+        'forehand' =>'Forehand' ,
+        'backhand' =>'Backhand' ,
+    ],
+
     'providers' => [
 
         /*

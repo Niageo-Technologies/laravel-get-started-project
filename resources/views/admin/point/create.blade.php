@@ -1,38 +1,22 @@
-@extends('admin.layouts.app')
+@extends('admin.layouts.crud_form')
+@section('action')
+    {{ route('admin.points.store') }}
+@endsection
 
-@section('content')
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">{{ __('Create Point') }}</div>
+@section('title', "Add Point")
 
-                <div class="card-body">
-
-                    @if (session('message'))
-                    <div class="alert alert-success" role="alert">
-                        {{ session('message') }}
-                    </div>
-                    @endif
-
-                    <form method="POST" action='{{ route("admin.points.store") }}' enctype="multipart/form-data">
-                        @csrf
-
-                        <div class="form-group">
-                            <input class="form-control" type="text" name="title" placeholder="Title">
-                            @error('title')
-                            <label class="text-danger">{{ $message }}</label>
-                            @enderror
-                        </div>
-
-                        <div class="form-group">
-                            <a class="btn btn-danger mr-1" href='{{ route("admin.points.index") }}' type="submit">Cancel</a>
-                            <button class="btn btn-success" type="submit">Save</button>
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
+@section('fields')
+    @component('components.forms.input', [
+        'name' => 'playing_style', 
+        'type' => 'textarea-rich',
+        'label' => 'Forehand Rubber',
+        'placeholder' => 'Opponent\'s Forehand Rubber', 
+        'col_classes' => ['col-sm-12', 'col-md-12'], 
+        'options' => [
+                ['value' =>'attacker', 'label' =>'Attacker' ],
+                ['value' =>'defender', 'label' =>'Defender' ],
+                ['value' =>'chopper', 'label' =>'Chopper' ],
+            ]
+        ])
+    @endcomponent
 @endsection

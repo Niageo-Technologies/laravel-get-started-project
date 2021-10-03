@@ -18,6 +18,8 @@ class CreateGamesTable extends Migration
             $table->unsignedBigInteger('set_id');
             $table->boolean('timeout');
             $table->longText('comment')->nullable();
+            $table->timestamps();
+
         });
     }
 

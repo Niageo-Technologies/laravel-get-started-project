@@ -19,6 +19,8 @@ class CreateAttributesTable extends Migration
             $table->longText('description')->nullable();
             $table->integer('significance');
             $table->boolean('strength')->nullable();
+            $table->timestamps();
+
         });
     }
 

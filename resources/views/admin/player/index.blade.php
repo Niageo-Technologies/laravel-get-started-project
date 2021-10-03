@@ -20,7 +20,7 @@
                         <thead>
                             <tr>
                                 <th>
-                                    Title
+                                    Name
                                 </th>
                                 <th>
                                     Created
@@ -32,7 +32,7 @@
                             @forelse($players as $player)
                             <tr>
                                 <td>
-                                    {{ $player->title ?? 'N/A' }}
+                                    {{ $player->name ?? 'N/A' }}
                                 </td>
 
                                 <td>

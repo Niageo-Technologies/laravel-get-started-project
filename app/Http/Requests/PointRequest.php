@@ -14,7 +14,7 @@ class PointRequest extends FormRequest
     public function rules()
     {
         return [
-            'title' => 'required',
+            'game_id' => 'required',
         ];
     }
 }

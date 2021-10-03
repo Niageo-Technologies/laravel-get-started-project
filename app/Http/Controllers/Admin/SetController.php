@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\SetRequest;
 use App\Models\Set;
+use App\Models\Player;
 use Exception;
 
 class SetController extends Controller
@@ -22,7 +23,9 @@ class SetController extends Controller
 
     public function create()
     {
-        return view('admin.set.create');
+        $options = $this->fetch_options_from_database(Player::class, 'name');
+        // dd($options);
+        return view('admin.set.create', ['options' => $options]);
     }
 
     public function store(SetRequest $request)

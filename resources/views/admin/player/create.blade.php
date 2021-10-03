@@ -1,38 +1,60 @@
-@extends('admin.layouts.app')
-
-@section('content')
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">{{ __('Create Player') }}</div>
-
-                <div class="card-body">
-
-                    @if (session('message'))
-                    <div class="alert alert-success" role="alert">
-                        {{ session('message') }}
-                    </div>
-                    @endif
-
-                    <form method="POST" action='{{ route("admin.players.store") }}' enctype="multipart/form-data">
-                        @csrf
-
-                        <div class="form-group">
-                            <input class="form-control" type="text" name="title" placeholder="Title">
-                            @error('title')
-                            <label class="text-danger">{{ $message }}</label>
-                            @enderror
-                        </div>
-
-                        <div class="form-group">
-                            <a class="btn btn-danger mr-1" href='{{ route("admin.players.index") }}' type="submit">Cancel</a>
-                            <button class="btn btn-success" type="submit">Save</button>
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
+@extends('admin.layouts.crud_form')
+@section('action')
+    {{ route('admin.players.store') }}
 @endsection
+
+@section('title', "Create Opponent")
+
+        @section('fields')
+                @component('components.forms.input', [
+                    'name' => 'name', 
+                    'type' => 'text',
+                    'label' => 'Name',
+                    'placeholder' => 'Opponent\'s Name', 
+                    'col_classes' => ['col-sm-12']
+                    ])
+                @endcomponent
+
+                @component('components.forms.input', [
+                    'name' => 'bh_rubber', 
+                    'type' => 'text',
+                    'label' => 'Backhand Rubber',
+                    'placeholder' => 'Opponent\'s Backhand Rubber', 
+                    'col_classes' => ['col-sm-12', 'col-md-6']
+                    ])
+                @endcomponent
+
+                @component('components.forms.input', [
+                    'name' => 'fh_rubber', 
+                    'type' => 'text',
+                    'label' => 'Forehand Rubber',
+                    'placeholder' => 'Opponent\'s Forehand Rubber', 
+                    'col_classes' => ['col-sm-12', 'col-md-6']
+                    ])
+                @endcomponent
+
+                @component('components.forms.input', [
+                    'name' => 'playing_style', 
+                    'type' => 'select',
+                    'label' => 'Forehand Rubber',
+                    'placeholder' => 'Opponent\'s Forehand Rubber', 
+                    'col_classes' => ['col-sm-12', 'col-md-12'], 
+                    'options' => [
+                            ['value' =>'attacker', 'label' =>'Attacker' ],
+                            ['value' =>'defender', 'label' =>'Defender' ],
+                            ['value' =>'chopper', 'label' =>'Chopper' ],
+                        ]
+                    ])
+                @endcomponent
+
+                @component('components.forms.input', [
+                    'name' => 'right_handed', 
+                    'type' => 'boolean',
+                    'label' => 'Right Handed',
+                    'col_classes' => ['col-sm-12', 'col-md-12'], 
+                    'default_value' => 1,
+
+                    ])
+                @endcomponent
+        @endsection
+    

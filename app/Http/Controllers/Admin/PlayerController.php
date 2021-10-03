@@ -27,6 +27,7 @@ class PlayerController extends Controller
 
     public function store(PlayerRequest $request)
     {
+        
         try{
             $player = Player::create($request->all());
 

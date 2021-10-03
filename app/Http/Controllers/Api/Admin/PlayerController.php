@@ -35,7 +35,6 @@ class PlayerController extends Controller
     public function store(Request $request)
     {
         $data = $request->all();
-
         $validator = Validator::make($data, [
             'title' => 'required',
         ]);

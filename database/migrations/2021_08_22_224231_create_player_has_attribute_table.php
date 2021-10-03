@@ -17,6 +17,8 @@ class CreatePlayerHasAttributeTable extends Migration
             $table->increments('id');
             $table->unsignedBigInteger('player_id');
             $table->unsignedBigInteger('attribute_id');
+            $table->timestamps();
+
         });
     }
 

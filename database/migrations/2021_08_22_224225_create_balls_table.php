@@ -21,6 +21,8 @@ class CreateBallsTable extends Migration
             $table->text('from');
             $table->text('to');
             $table->text('stroke_type');
+            $table->timestamps();
+
         });
     }
 

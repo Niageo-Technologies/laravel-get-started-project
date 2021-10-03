@@ -14,7 +14,15 @@ class BallRequest extends FormRequest
     public function rules()
     {
         return [
-            'title' => 'required',
+            'ball_position' => 'required',
+            // 'spin' => 'required',
+            // 'from' => 'required',
+            // 'to' => 'required',
+            // 'stroke_type' => 'required',
+            // 'spin_intensity' => 'required',
+            // 'length' => 'required',
+            // 'own_shot' => 'required',
+            // 'hand' => 'required',
         ];
     }
 }

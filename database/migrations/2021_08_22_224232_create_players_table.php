@@ -20,6 +20,8 @@ class CreatePlayersTable extends Migration
             $table->text('fh_rubber')->nullable();
             $table->text('playing_style');
             $table->boolean('right_handed');
+            $table->timestamps();
+
         });
     }
 
